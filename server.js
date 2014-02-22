@@ -15,11 +15,11 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 // Application Config
 var config = require('./lib/config/config');
 
-// Connect to database
+// Connect to mongoDB
 var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Bootstrap models
-var modelsPath = path.join(__dirname, 'lib/models');
+var modelsPath = path.join(__dirname, 'lib/mongo-models');
 fs.readdirSync(modelsPath).forEach(function (file) {
   if (/(.*)\.(js$|coffee$)/.test(file)) {
     require(modelsPath + '/' + file);
@@ -33,6 +33,9 @@ require('./lib/config/dummydata');
 var passport = require('./lib/config/passport');
 
 var app = express();
+
+//Connect to Database
+app.set('models', require('./lib/models') );
 
 // Express settings
 require('./lib/config/express')(app);
