@@ -4,7 +4,11 @@ angular.module('meanApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate',
+  'mgcrea.ngStrap',
+  'mgcrea.ngStrap.modal',
+  'mgcrea.ngStrap.aside'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

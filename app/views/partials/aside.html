@@ -1,0 +1,16 @@
+<div ng-controller="AsideCtrl" class="aside ng-scope left am-slide-left" tabindex="-1" role="dialog" style="display: block;">
+  <div class="aside-dialog">
+    <div class="aside-content">
+      <div class="aside-header" ng-show="title">
+        <h4 class="aside-title ng-binding" ng-bind-html="title">Title</h4>
+      </div>
+      <div class="aside-body" ng-show="content">
+
+ 
+      </div>
+      <div class="aside-footer">
+        <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
