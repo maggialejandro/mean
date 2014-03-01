@@ -10,8 +10,10 @@
     "passport": "latest",
     "passport-local": "latest",
     "ejs": "~0.8.4",
-    "mysql": "*",
-    "sequelize": "2.0.0-beta.1"
+    "sequelize": "~2.0.0",
+    "mysql": "~2.0.0-alpha7",
+    "pg":"~2.10.0",
+    "sequelize-postgres": "~2.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

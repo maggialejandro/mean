@@ -2,5 +2,5 @@
 
 angular.module('meanApp')
   .controller('AsideCtrl', function ($scope) {
-	
+   
   });
