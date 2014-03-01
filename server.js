@@ -22,6 +22,22 @@ var mongodb = require('./lib/db/mongo');
 // Populate empty DB with sample data
 require('./lib/config/dummydata');
 
+// Sequelize
+var sequelize = require('./lib/db/sequelize');
+
+sequelize
+	.sequelize
+  	.sync({force:true})
+  	.complete(function(err) {
+    	if (err) {
+     		throw err
+    	} else {
+      		console.log('Sequelize sync complete');
+    	}
+  	});
+
+console.log(sequelize);
+
 // Passport Configuration
 var passport = require('./lib/config/passport');
 
