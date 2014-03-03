@@ -2,7 +2,7 @@
 
 // Module dependencies
 var express = require('express'),
-	http = require('http');
+	  http = require('http');
 
 /**
  * Main application file
@@ -35,8 +35,6 @@ sequelize
       		console.log('Sequelize sync complete');
     	}
   	});
-
-console.log(sequelize);
 
 // Passport Configuration
 var passport = require('./lib/config/passport');
