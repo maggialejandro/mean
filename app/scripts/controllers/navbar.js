@@ -2,13 +2,11 @@
 
 angular.module('meanApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }, {
-      'title': 'Settings',
-      'link': '/settings'
-    }];
+    $scope.menu = [
+    {'title': 'Home', 'link': '/'},
+    {'title': 'Mascotas Perdidas', 'link': '/perdidas'},
+    {'title': 'Settings', 'link': '/settings'}
+    ];
     
     $scope.logout = function() {
       Auth.logout()

@@ -29,6 +29,11 @@ angular.module('meanApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/perdidas', {
+        templateUrl: 'partials/perdidas',
+        controller: 'PerdidasCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
