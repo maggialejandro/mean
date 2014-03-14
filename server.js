@@ -17,14 +17,15 @@ var app = express();
 require('./lib/config/express')(app);
 
 // Mongo
-var mongodb = require('./lib/db/mongo');
+//var mongodb = require('./lib/db/mongo');
 
 // Populate empty DB with sample data
-require('./lib/config/dummydata');
+//require('./lib/config/dummydata');
 
 // Sequelize
 var sequelize = require('./lib/db/sequelize');
 
+/* Sequelize Sync
 sequelize
 	.sequelize
   	.sync({force:true})
@@ -35,6 +36,7 @@ sequelize
       		console.log('Sequelize sync complete');
     	}
   	});
+*/
 
 // Passport Configuration
 var passport = require('./lib/config/passport');

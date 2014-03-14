@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location) {
+  .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -23,4 +23,26 @@ angular.module('meanApp')
         });
       }
     };
+
+    $scope.loginFB = function(form) {
+      $scope.submitted = true;
+      
+      if(form.$valid) {
+        Auth.loginFacebook()
+        .then( function() {
+          console.log('bien');
+          // Logged in, redirect to home
+          $location.path('/');
+        })
+        .catch( function(err) {
+          err = err.data;
+          $scope.errors.other = err.message;
+        });
+      }
+    };
+
+    $scope.oauth = function(provider){
+      $window.location.href = '/auth/' + provider;
+    };
+
   });

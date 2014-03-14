@@ -1,14 +1,30 @@
 'use strict';
 
 angular.module('meanApp')
-  .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
+  .factory('Auth', function Auth($location, $rootScope, Session, Facebook, User, $cookieStore) {
     
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
     $cookieStore.remove('user');
 
     return {
+      /**
+       * Authenticate with Facebook
+       * 
+       * @param  {Function} callback - optional
+       * @return {Promise}            
+       */
+      loginFacebook: function(callback){
+        var cb = callback || angular.noop;
 
+        return Facebook.save(function(user) {
+          connsole.log(user);
+          $rootScope.currentUser = user;
+          return cb();
+        }, function(err) {
+          return cb(err);
+        }).$promise;
+      },
       /**
        * Authenticate user
        * 

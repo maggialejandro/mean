@@ -9,11 +9,10 @@
     "connect-mongo": "~0.4.0",
     "passport": "latest",
     "passport-local": "latest",
+    "passport-facebook": "~1.0.2",
     "ejs": "~0.8.4",
     "sequelize": "~1.7.0",
-    "mysql": "~2.0.0-alpha7",
-    "pg":"~2.10.0",
-    "sequelize-postgres": "~2.0.0"
+    "mysql": "~2.0.0-alpha7"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

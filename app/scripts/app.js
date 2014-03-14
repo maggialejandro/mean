@@ -6,6 +6,8 @@ angular.module('meanApp', [
   'ngSanitize',
   'ngRoute',
   'ngAnimate',
+  'ui.map',
+  'ui.event',
   'mgcrea.ngStrap',
   'mgcrea.ngStrap.modal',
   'mgcrea.ngStrap.aside'
@@ -54,6 +56,7 @@ angular.module('meanApp', [
         }
       };
     }]);
+
   })
   .run(function ($rootScope, $location, Auth) {
 
